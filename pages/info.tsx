@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
 import getAll from '../src/clients'
 import IDescriptions from '../src/models'
 import styled from "styled-components";
@@ -24,11 +23,6 @@ const Sobre = () => {
     <>
       <Title>test</Title>
       <ul>
-        <li>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-        </li>
         {
           pokemons?.pokemon_entries.map((item, index) => (
             <li key={item.entry_number}>
