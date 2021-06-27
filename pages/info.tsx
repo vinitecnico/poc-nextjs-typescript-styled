@@ -3,6 +3,7 @@ import getAll from '../src/clients'
 import IDescriptions from '../src/models'
 import styled from "styled-components";
 import { Container, Content, Footer, Head } from '../src/components'
+import Link from 'next/link';
 
 const Title = styled.h1`
   font-size: 50px;
@@ -44,7 +45,9 @@ const Sobre: React.FC<IPokemonProps> = ({ pokemons }) => {
           {
             pokemons?.pokemon_entries.map((item, index) => (
               <li key={item.entry_number}>
-                {item?.pokemon_species?.name}
+                <Link href={`/pokemon/${item.entry_number}`}>
+                  {item?.pokemon_species?.name}
+                </Link>
               </li>
             ))
           }
