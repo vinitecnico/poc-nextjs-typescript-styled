@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { createGlobalStyle, ThemeProvider } from "styled-components";
+import theme from '../styles/theme'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -12,19 +13,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Open Sans', sans-serif;
   }
 `;
-
-const theme = {
-  colors: {
-    primary: "#0070f3",
-    lightGray: "#eaeaea",
-  },
-  fonts: {
-    large: '30px',
-    medium: '16px',
-    small: '14px'
-  }
-};
-
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

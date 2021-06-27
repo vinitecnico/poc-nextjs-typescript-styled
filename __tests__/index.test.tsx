@@ -1,10 +1,17 @@
- import { render, screen } from '@testing-library/react';
+import React from "react";
+import { render, screen } from '@testing-library/react'
+import { ThemeProvider } from 'styled-components';
+import theme from '../styles/theme'
+import HomePage from '../pages'
 
-import App from '../pages/index';
+describe("HomePage", () => {
+  it("should render the heading", () => {
+    render(
+      <ThemeProvider theme={theme}>
+        <HomePage />
+      </ThemeProvider>
+    );
 
-describe('Should render the app without crashing', () => {
-  it('Renders the home page', () => {
-    render(<App />);
     expect(
       screen.getByRole('heading', { name: 'Welcome to Next.js!' })
     ).toBeInTheDocument();
