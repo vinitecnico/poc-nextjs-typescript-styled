@@ -9,16 +9,30 @@ const Title = styled.h1`
   color: ${({ theme }) => theme.colors.primary};
 `;
 
-const Sobre = () => {
-  const [pokemons, setPokemons] = useState<IDescriptions>()
-  const getUser = async () => {
-    const result = await getAll();
-    setPokemons(result)
-  };
+export async function getStaticProps() {
+  const pokemons = await getAll()
 
-  useEffect(() => {
-    getUser()
-  }, [])
+  return {
+    props: {
+      pokemons,
+    },
+  }
+}
+
+interface IPokemonProps {
+  pokemons: IDescriptions
+}
+
+const Sobre: React.FC<IPokemonProps> = ({ pokemons }) => {
+  // const [pokemons, setPokemons] = useState<IDescriptions>()
+  // const getUser = async () => {
+  //   const result = await getAll();
+  //   setPokemons(result)
+  // };
+
+  // useEffect(() => {
+  //   getUser()
+  // }, [])
 
   return (
     <Container>
