@@ -8,7 +8,7 @@ const ContainerElement = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  overflow-y: auto;
 `;
 
 interface ContainerProps {
