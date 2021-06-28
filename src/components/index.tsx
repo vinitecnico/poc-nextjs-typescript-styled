@@ -5,11 +5,4 @@ import Footer from './Footer'
 import Grid from './commons/Grid'
 import Head from './Head'
 
-export {
-  Card,
-  Container,
-  Content,
-  Footer,
-  Grid,
-  Head
-}
+export { Card, Container, Content, Footer, Grid, Head }

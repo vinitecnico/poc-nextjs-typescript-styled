@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { createGlobalStyle, ThemeProvider } from "styled-components";
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import theme from '../styles/theme'
 
 const GlobalStyle = createGlobalStyle`
@@ -12,9 +12,9 @@ const GlobalStyle = createGlobalStyle`
   * {
     font-family: 'Open Sans', sans-serif;
   }
-`;
+`
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
     <>
       <GlobalStyle />

@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from "styled-components"
+import styled from 'styled-components'
 
 const GridElement = styled.main`
   display: flex;
@@ -8,18 +8,14 @@ const GridElement = styled.main`
   flex-wrap: wrap;
   max-width: 800px;
   margin-top: 3rem;
-`;
+`
 
 interface GridProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 const Grid: React.FC<GridProps> = ({ children }) => {
-  return (
-    <GridElement>
-      {children}
-    </GridElement>
-  )
+  return <GridElement>{children}</GridElement>
 }
 
 export default Grid

@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from "styled-components"
+import styled from 'styled-components'
 
 const CardElement = styled.main`
   margin: 1rem;
@@ -7,7 +7,7 @@ const CardElement = styled.main`
   text-align: left;
   color: inherit;
   text-decoration: none;
-  border: 1px solid  ${({ theme }) => theme.colors.lightGray};
+  border: 1px solid ${({ theme }) => theme.colors.lightGray};
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   width: 45%;
@@ -29,18 +29,14 @@ const CardElement = styled.main`
     font-size: 1.25rem;
     line-height: 1.5;
   }
-`;
+`
 
 interface CardProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 const Card: React.FC<CardProps> = ({ children }) => {
-  return (
-    <CardElement>
-      {children}
-    </CardElement>
-  )
+  return <CardElement>{children}</CardElement>
 }
 
 export default Card

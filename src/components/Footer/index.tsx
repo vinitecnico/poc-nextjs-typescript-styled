@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import styled from "styled-components"
+import styled from 'styled-components'
 
 const FooterElement = styled.footer`
   width: 100%;
@@ -16,9 +16,7 @@ const FooterElement = styled.footer`
     align-items: center;
     flex-grow: 1;
   }
-`;
-
-
+`
 
 const Footer: React.FC = () => {
   return (
@@ -28,7 +26,7 @@ const Footer: React.FC = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Powered by I and {' '}
+        Powered by I and{' '}
         <span>
           <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
         </span>
@@ -37,4 +35,4 @@ const Footer: React.FC = () => {
   )
 }
 
-export default Footer;
+export default Footer

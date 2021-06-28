@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from "styled-components"
+import styled from 'styled-components'
 
 const ContainerElement = styled.main`
   min-height: 100vh;
@@ -9,18 +9,14 @@ const ContainerElement = styled.main`
   justify-content: center;
   align-items: center;
   overflow-y: auto;
-`;
+`
 
 interface ContainerProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 const Container: React.FC<ContainerProps> = ({ children }) => {
-  return (
-    <ContainerElement>
-      {children}
-    </ContainerElement>
-  )
+  return <ContainerElement>{children}</ContainerElement>
 }
 
 export default Container

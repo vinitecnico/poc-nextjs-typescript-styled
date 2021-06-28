@@ -1,7 +1,7 @@
 import { Card, Container, Content, Footer, Grid, Head } from '../src/components'
 import Link from 'next/link'
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
     <Container>
       <Head title="title test" />
@@ -12,7 +12,7 @@ export default function Home() {
         </h1>
 
         <p>
-          Get started by editing{' '}
+          Get started by editing
           <code>pages/index.js</code>
         </p>
 
@@ -25,14 +25,13 @@ export default function Home() {
           </Card>
 
           <Card>
-            <Link href="/info">
-              info page
-            </Link>
+            <Link href="/info">info page</Link>
           </Card>
         </Grid>
-
       </Content>
       <Footer />
     </Container>
   )
 }
+
+export default Home

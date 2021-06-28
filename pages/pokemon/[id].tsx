@@ -1,21 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useRouter } from 'next/router'
 
 interface IParams {
   id: number
 }
 
-const Pokemon: React.FC<IParams> = () => {
+const Pokemon: React.FC<IParams> = (): JSX.Element => {
   const router = useRouter()
   const { id } = router.query
-  return  (
+
+  return (
     <div>
-      <h1>
-        here {id}
-      </h1>
+      <h1>here {id}</h1>
     </div>
   )
 }
 
 export default Pokemon
-

@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios from 'axios'
 import IDescriptions from '../models'
 
 const api = axios.create({
