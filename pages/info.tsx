@@ -1,6 +1,6 @@
 import React from 'react'
-import getAll from '../src/clients'
-import IDescriptions from '../src/models'
+import { getAll } from '../src/clients'
+import IPokemons from '../src/models'
 import styled from 'styled-components'
 import { Container, Content, Footer, Head } from '../src/components'
 import Link from 'next/link'
@@ -21,7 +21,7 @@ export async function getStaticProps() {
 }
 
 interface IPokemonProps {
-  pokemons: IDescriptions
+  pokemons: IPokemons
 }
 
 const Sobre: React.FC<IPokemonProps> = ({ pokemons }) => {
@@ -42,9 +42,9 @@ const Sobre: React.FC<IPokemonProps> = ({ pokemons }) => {
       <Content>
         <Title>test</Title>
         <ul>
-          {pokemons?.pokemon_entries.map((item) => (
-            <li key={item.entry_number}>
-              <Link href={`/pokemon/${item.entry_number}`}>{item?.pokemon_species?.name}</Link>
+          {pokemons?.results.map((item) => (
+            <li key={item.name}>
+              <Link href={`/pokemon/${item?.name}`}>{item?.name}</Link>
             </li>
           ))}
         </ul>

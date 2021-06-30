@@ -1,12 +1,17 @@
 import axios from 'axios'
-import IDescriptions from '../models'
+import IPokemons from '../models'
+import IPokemonDetails from '../models'
 
 const api = axios.create({
-  baseURL: 'https://pokeapi.co/api/v2/pokedex'
+  baseURL: process.env.apiUrl,
 })
 
 const getAll = async () => {
-  return api.get<IDescriptions>('/2/').then(({ data }) => data)
+  return api.get<IPokemons>('').then(({ data }) => data)
 }
 
-export default getAll
+const getDetails = async (name) => {
+  return api.get<IPokemonDetails>(`/${name}`).then(({ data }) => data)
+}
+
+export { getAll, getDetails }

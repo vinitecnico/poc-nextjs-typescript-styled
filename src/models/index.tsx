@@ -4,6 +4,19 @@ export default interface IDescriptions {
   name: string
 }
 
+export default interface IPokemons {
+  results: IResult[]
+}
+
+export default interface IPokemonDetails {
+  sprites: { front_default: string }
+}
+
+interface IResult {
+  name: string
+  url: string
+}
+
 interface IElements {
   entry_number: number
   pokemon_species: {
