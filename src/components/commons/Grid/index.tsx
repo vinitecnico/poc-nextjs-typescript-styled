@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const GridElement = styled.main`
+const GridElement = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;

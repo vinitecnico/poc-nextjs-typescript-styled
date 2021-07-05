@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const ContentElement = styled.main`
+const ContentElement = styled.div`
   padding: 5rem 0;
   flex: 1;
   display: flex;

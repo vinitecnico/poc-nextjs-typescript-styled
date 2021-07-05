@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { getDetails } from '../../src/clients'
 import IPokemonDetails from '../../src/models'
+import DocsLayout from '../../src/components/Layout/DocsLayout'
 // import Image from 'next/image'
 
 import styled from 'styled-components'
 
-const Card = styled.footer`
+const Card = styled.div`
   width: 18rem;
   margin: auto;
   background: #5bb0ca;
@@ -81,16 +82,17 @@ const Pokemon: React.FC = (): JSX.Element => {
 
   useEffect(() => {
     init()
-  }, [])
+  }, [id])
 
   return (
     <Card>
       <span>#1</span>
       <img src={pokemon?.sprites?.front_default} alt="Vercel Logo" />
       <h1>{id}</h1>
-      {/* <Image src={pokemon?.sprites?.front_default || ''} alt="Picture of the author" /> */}
+      {/* {/* <Image src={pokemon?.sprites?.front_default || ''} alt="Picture of the author" /> */}
     </Card>
   )
 }
 
+Pokemon.Layout = DocsLayout
 export default Pokemon
