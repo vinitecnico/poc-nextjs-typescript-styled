@@ -17,7 +17,20 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
+import { NextPage } from 'next'
+import { ComponentType, ReactElement, ReactNode } from 'react'
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export type Page<P = {}> = NextPage<P> & {
+  getLayout?: (page: ReactElement) => ReactNode
+  Layout?: ComponentType
+}
+
+type Props = AppProps & {
+  Component: Page
+}
+
+const MyApp = ({ Component, pageProps }: Props): JSX.Element => {
   const Layout = Component?.Layout ? Component.Layout : DefaultLayout
 
   return (

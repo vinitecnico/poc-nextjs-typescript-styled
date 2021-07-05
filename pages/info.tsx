@@ -3,7 +3,6 @@ import { getAll } from '../src/clients'
 import IPokemons from '../src/models'
 import styled from 'styled-components'
 import { Container, Content, Footer, Head } from '../src/components'
-import DocsLayout from '../src/components/Layout/DocsLayout'
 import Link from 'next/link'
 
 const Title = styled.h1`
@@ -54,5 +53,4 @@ const Sobre: React.FC<IPokemonProps> = ({ pokemons }) => {
   )
 }
 
-// Sobre.Layout = DocsLayout
 export default Sobre
