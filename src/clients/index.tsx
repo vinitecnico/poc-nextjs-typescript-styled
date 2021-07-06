@@ -10,7 +10,7 @@ const getAll = async () => {
   return api.get<IPokemons>('').then(({ data }) => data)
 }
 
-const getDetails = async (name) => {
+const getDetails = async (name: string) => {
   return api.get<IPokemonDetails>(`/${name}`).then(({ data }) => data)
 }
 
