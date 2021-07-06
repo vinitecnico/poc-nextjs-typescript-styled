@@ -63,11 +63,7 @@ const Card = styled.div`
 //   }
 // }
 
-// interface IPokemonProps {
-//   pokemon: IPokemonDetails
-// }
-
-const Pokemon: React.FC = (): JSX.Element => {
+const Pokemon: { Layout?: React.ReactNode } = () => {
   const router = useRouter()
   const { id } = router.query
 
@@ -89,7 +85,6 @@ const Pokemon: React.FC = (): JSX.Element => {
       <span>#1</span>
       <img src={pokemon?.sprites?.front_default} alt="Vercel Logo" />
       <h1>{id}</h1>
-      {/* {/* <Image src={pokemon?.sprites?.front_default || ''} alt="Picture of the author" /> */}
     </Card>
   )
 }

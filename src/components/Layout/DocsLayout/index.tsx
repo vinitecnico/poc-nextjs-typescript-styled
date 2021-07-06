@@ -30,7 +30,6 @@ interface DocsLayoutProps {
 
 const DocsLayout: React.FC<DocsLayoutProps> = ({ children }) => {
   const pokemons: string[] = ['bulbasaur', 'ivysaur', 'venusaur', 'charmander', 'charmeleon']
-  console.log('here')
 
   return (
     <DocElement>
