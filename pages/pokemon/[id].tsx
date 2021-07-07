@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
-// import { getDetails } from '../../src/clients'
-// import IPokemonDetails from '../../src/models'
+import { getDetails } from '../../src/clients'
+import IPokemonDetails from '../../src/models'
 import DocsLayout from '../../src/components/Layout/DocsLayout'
-// import Image from 'next/image'
+import Image from 'next/image'
 
 import styled from 'styled-components'
 
@@ -67,24 +67,32 @@ const Pokemon: { Layout?: React.ReactNode } = () => {
   const router = useRouter()
   const { id } = router.query
 
-  // const name = id?.toString()
-  // const [pokemon, setPokemon] = useState<IPokemonDetails>()
+  const name = id?.toString()
+  const [pokemon, setPokemon] = useState<IPokemonDetails>()
 
-  // const init = async () => {
-  //   if (name) {
-  //     const result = await getDetails(name)
-  //     setPokemon(result)
-  //   }
-  // }
+  const init = async () => {
+    if (name) {
+      const result = await getDetails(name)
+      setPokemon(result)
+    }
+  }
 
-  // useEffect(() => {
-  //   init()
-  // }, [id])
+  useEffect(() => {
+    init()
+  }, [id])
 
   return (
     <Card>
       <span>#1</span>
       {/* <img src={pokemon?.sprites?.front_default} alt="Vercel Logo" /> */}
+      <Image
+        alt="Vercel Logo"
+        title="Vercel Logo"
+        src={pokemon?.sprites?.front_default || 'https://picsum.photos/480/270'}
+        // width={480}
+        // height={270}
+        layout="fill"
+      />
       <h1>{id}</h1>
     </Card>
   )
