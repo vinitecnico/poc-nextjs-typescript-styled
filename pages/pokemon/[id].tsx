@@ -30,6 +30,15 @@ const Card = styled.div`
     color: rgb(255, 255, 255);
     font-size: 2rem;
     font-weight: 700;
+    margin-top: 0;
+  }
+  div {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    max-height: 100px;
+    max-width: 100px;
+    margin: auto;
   }
   img {
     width: 150px;
@@ -49,19 +58,6 @@ const Card = styled.div`
   }
 }
 `
-
-// export async function getStaticProps() {
-//   // const router = useRouter()
-//   // const { id } = router.query
-
-//   const pokemon = await getDetails('kanto')
-
-//   return {
-//     props: {
-//       pokemon,
-//     },
-//   }
-// }
 
 const Pokemon: { Layout?: React.ReactNode } = () => {
   const router = useRouter()
@@ -84,15 +80,15 @@ const Pokemon: { Layout?: React.ReactNode } = () => {
   return (
     <Card>
       <span>#1</span>
-      {/* <img src={pokemon?.sprites?.front_default} alt="Vercel Logo" /> */}
-      <Image
-        alt="Vercel Logo"
-        title="Vercel Logo"
-        src={pokemon?.sprites?.front_default || 'https://picsum.photos/480/270'}
-        // width={480}
-        // height={270}
-        layout="fill"
-      />
+      <div>
+        <Image
+          alt="Vercel Logo"
+          title="Vercel Logo"
+          src={pokemon?.sprites?.front_default || 'https://picsum.photos/150/270'}
+          layout="fill"
+          objectFit="contain"
+        />
+      </div>
       <h1>{id}</h1>
     </Card>
   )
