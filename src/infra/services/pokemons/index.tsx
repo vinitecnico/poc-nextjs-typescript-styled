@@ -1,6 +1,6 @@
 import axios from 'axios'
-import IPokemons from '../models'
-import IPokemonDetails from '../models'
+import IPokemons from '../../../types'
+import IPokemonDetails from '../../../types'
 
 const api = axios.create({
   baseURL: process.env.apiUrl,
@@ -14,4 +14,7 @@ const getDetails = async (name: string) => {
   return api.get<IPokemonDetails>(`/${name}`).then(({ data }) => data)
 }
 
-export { getAll, getDetails }
+export default { 
+  getAll, 
+  getDetails 
+}
