@@ -1,63 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { getDetails } from '../../src/clients'
-import IPokemonDetails from '../../src/models'
+import pokemons from '../../src/infra/services/pokemons'
+import IPokemonDetails from '../../src/types'
 import DocsLayout from '../../src/components/Layout/DocsLayout'
 import Image from 'next/image'
-
-import styled from 'styled-components'
-
-const Card = styled.div`
-  width: 18rem;
-  margin: auto;
-  background: #5bb0ca;
-  color: #e4c439;
-  padding: 1rem;
-  border-radius: 10px;
-  border-top: 0.5px solid #e4c439;
-  border-bottom: 0.5px solid #e4c439;
-  text-align: center;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  transition: 0.2s ease-in-out all;x-grow: 1;
-  &:hover {
-    transform: scale(1.05);
-  }
-  h1 {
-    text-transform: capitalize;
-    color: rgb(255, 255, 255);
-    font-size: 2rem;
-    font-weight: 700;
-    margin-top: 0;
-  }
-  div {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    max-height: 100px;
-    max-width: 100px;
-    margin: auto;
-  }
-  img {
-    width: 150px;
-    display: block;
-    margin: auto;
-  }
-  span {
-    background: #e4c439;
-    width: 3rem;
-    color: #fff;
-    padding: 0.1rem;
-    font-weight: 700;
-    position: absolute;
-    border-radius: 0 0 10px 0;
-    top: 0;
-    left: 0;
-  }
-}
-`
+import styles from './styles'
 
 const Pokemon: { Layout?: React.ReactNode } = () => {
   const router = useRouter()
@@ -68,7 +15,7 @@ const Pokemon: { Layout?: React.ReactNode } = () => {
 
   const init = async () => {
     if (name) {
-      const result = await getDetails(name)
+      const result = await pokemons.getDetails(name)
       setPokemon(result)
     }
   }
@@ -78,7 +25,7 @@ const Pokemon: { Layout?: React.ReactNode } = () => {
   }, [id])
 
   return (
-    <Card>
+    <styles.Card>
       <span>#1</span>
       <div>
         <Image
@@ -90,7 +37,7 @@ const Pokemon: { Layout?: React.ReactNode } = () => {
         />
       </div>
       <h1>{id}</h1>
-    </Card>
+    </styles.Card>
   )
 }
 
